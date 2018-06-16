@@ -21,33 +21,10 @@ public class SFCNewsApp extends Application {
 
     public static final String LOG_TAG = "SFCNewsApp";
 
-    private MMNewsAPI mmNewsAPI;
-
     @Override
     public void onCreate() {
         super.onCreate();
 //        NewsModel.getInstance().startLoadingMMNews();
     }
 
-    public MMNewsAPI getMMNewsApi(){
-        initMMNewsApi();
-        return mmNewsAPI;
-    }
-
-    private void initMMNewsApi(){
-        final OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .connectTimeout(30, TimeUnit.SECONDS)
-                .writeTimeout(30, TimeUnit.SECONDS)
-                .readTimeout(60, TimeUnit.SECONDS)
-                .build();
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://padcmyanmar.com/padc-3/mm-news/apis/")
-                .addConverterFactory(GsonConverterFactory.create(new Gson()))
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .client(okHttpClient)
-                .build();
-
-        mmNewsAPI = retrofit.create(MMNewsAPI.class);
-    }
 }
