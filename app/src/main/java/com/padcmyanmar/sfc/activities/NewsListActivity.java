@@ -103,7 +103,7 @@ public class NewsListActivity extends BaseActivity
         mSmartScrollListener = new SmartScrollListener(new SmartScrollListener.OnSmartScrollListener() {
             @Override
             public void onListEndReach() {
-                //Snackbar.make(rvNews, "This is all the data for NOW.", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(rvNews, "This is all the data for NOW.", Snackbar.LENGTH_LONG).show();
                 //TODO load more data.
             }
         });
@@ -135,9 +135,7 @@ public class NewsListActivity extends BaseActivity
         });
 
         newsModel = NewsModel.getInstance();
-        newsModel.initDatabase(getApplicationContext());
-        newsModel.initPublishSubject(mNewsSubject);
-        newsModel.startLoadingMMNews();
+        newsModel.startLoadingMMNews(mNewsSubject);
         primeSingle();
     }
 
@@ -176,7 +174,7 @@ public class NewsListActivity extends BaseActivity
 
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] == 2 || isPrime(numbers[i])) {
-                primeNumbers = primeNumbers + numbers[i] + ", ";
+                primeNumbers += numbers[i] + ", ";
             }
         }
 

@@ -1,26 +1,16 @@
 package com.padcmyanmar.sfc.data.models;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.google.gson.Gson;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.padcmyanmar.sfc.SFCNewsApp;
-import com.padcmyanmar.sfc.data.db.AppDatabase;
 import com.padcmyanmar.sfc.data.vo.NewsVO;
-import com.padcmyanmar.sfc.events.RestApiEvents;
 import com.padcmyanmar.sfc.network.MMNewsAPI;
-import com.padcmyanmar.sfc.network.MMNewsDataAgent;
-import com.padcmyanmar.sfc.network.MMNewsDataAgentImpl;
 import com.padcmyanmar.sfc.network.reponses.GetNewsResponse;
 import com.padcmyanmar.sfc.utils.AppConstants;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -41,17 +31,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NewsModel {
 
     private static NewsModel objInstance;
-
-    private List<NewsVO> mNews;
     private int mmNewsPageIndex = 1;
-    private AppDatabase mAppDatabase;
-    private PublishSubject<List<NewsVO>> mNewsSubject;
     private MMNewsAPI mmNewsAPI;
 
     private NewsModel() {
-        EventBus.getDefault().register(this);
         initMMNewsApi();
-        mNews = new ArrayList<>();
     }
 
     public static NewsModel getInstance() {
@@ -78,19 +62,11 @@ public class NewsModel {
         mmNewsAPI = retrofit.create(MMNewsAPI.class);
     }
 
-    public void initDatabase(Context context) {
-        mAppDatabase = AppDatabase.getNewsDatabase(context);
-    }
-
-    public void initPublishSubject(PublishSubject<List<NewsVO>> newsSubject) {
-        this.mNewsSubject = newsSubject;
-    }
-
     public Single<GetNewsResponse> getMMNews() {
         return mmNewsAPI.loadMMNews(mmNewsPageIndex, AppConstants.ACCESS_TOKEN);
     }
 
-    public void startLoadingMMNews() {
+    public void startLoadingMMNews(final PublishSubject<List<NewsVO>> newsSubject) {
         Single<GetNewsResponse> getNewsResponseObservable = getMMNews();
 
         getNewsResponseObservable
@@ -102,12 +78,12 @@ public class NewsModel {
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread()) //observe the emitted value of the Observable on an appropriate thread
-                .subscribeWith(new DisposableSingleObserver<List<NewsVO>>() {
+                .subscribe(new DisposableSingleObserver<List<NewsVO>>() {
 
                     @Override
                     public void onSuccess(List<NewsVO> newsVOs) {
                         Log.d(SFCNewsApp.LOG_TAG, "onSuccess: " + newsVOs.size());
-                        mNewsSubject.onNext(newsVOs);
+                        newsSubject.onNext(newsVOs);
                     }
 
                     @Override
@@ -115,11 +91,5 @@ public class NewsModel {
                         Log.d(SFCNewsApp.LOG_TAG, "onError: " + e.getMessage());
                     }
                 });
-    }
-
-    @Subscribe(threadMode = ThreadMode.BACKGROUND)
-    public void onNewsDataLoaded(RestApiEvents.NewsDataLoadedEvent event) {
-        mNews.addAll(event.getLoadNews());
-        mmNewsPageIndex = event.getLoadedPageIndex() + 1;
     }
 }

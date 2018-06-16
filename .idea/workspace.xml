@@ -5,6 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a222c77-3e80-4404-b568-84abea93437c" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2018-06-16-16-37-41-205.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2018-06-16-16-37-41-205.rawproto" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2018-06-16-16-42-06-745.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2018-06-16-16-42-06-745.rawproto" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2018-06-16-16-49-23-598.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2018-06-16-16-49-23-598.rawproto" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
@@ -13,11 +19,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/SFCNewsApp.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/SFCNewsApp.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/activities/NewsListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/activities/NewsListActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/data/models/NewsModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/data/models/NewsModel.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,11 +50,29 @@
       <file leaf-file-name="NewsModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/data/models/NewsModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="109" column="53" lean-forward="true" selection-start-line="109" selection-start-column="53" selection-end-line="109" selection-end-column="53" />
+            <state relative-caret-position="490">
+              <caret line="85" column="52" lean-forward="true" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="52" />
               <folding>
-                <element signature="e#3244#3513#0" expanded="true" />
-                <element signature="e#3512#3513#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1099#1100#0" expanded="true" />
+                <element signature="e#1130#1131#0" expanded="true" />
+                <element signature="e#2448#2717#0" expanded="true" />
+                <element signature="e#2716#2717#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsListActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/activities/NewsListActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="146" column="43" lean-forward="true" selection-start-line="146" selection-start-column="43" selection-end-line="146" selection-end-column="43" />
+              <folding>
+                <element signature="e#3539#3817#0" expanded="true" />
+                <element signature="e#3816#3817#0" expanded="true" />
+                <element signature="e#4686#4924#0" expanded="true" />
+                <element signature="e#4923#4924#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2000,6 +2021,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/SFCNewsApp.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/activities/NewsListActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/data/models/NewsModel.java" />
       </list>
     </option>
@@ -2070,6 +2092,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sfc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MM News RxJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MM News RxJava" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sfc" type="462c0819:PsiDirectoryNode" />
+              <item name="activities" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MM News RxJava" type="b2602c69:ProjectViewProjectNode" />
@@ -2339,13 +2371,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.1.1/6112a58432d62645eca9d0aa77bf6bc7ad75b66a/rxjava-2.1.1-sources.jar!/io/reactivex/subjects/PublishSubject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/activities/NewsListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="146" column="43" lean-forward="true" selection-start-line="146" selection-start-column="43" selection-end-line="146" selection-end-column="43" />
+          <folding>
+            <element signature="e#3539#3817#0" expanded="true" />
+            <element signature="e#3816#3817#0" expanded="true" />
+            <element signature="e#4686#4924#0" expanded="true" />
+            <element signature="e#4923#4924#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/padcmyanmar/sfc/data/models/NewsModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="109" column="53" lean-forward="true" selection-start-line="109" selection-start-column="53" selection-end-line="109" selection-end-column="53" />
+        <state relative-caret-position="490">
+          <caret line="85" column="52" lean-forward="true" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="52" />
           <folding>
-            <element signature="e#3244#3513#0" expanded="true" />
-            <element signature="e#3512#3513#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1130#1131#0" expanded="true" />
+            <element signature="e#2448#2717#0" expanded="true" />
+            <element signature="e#2716#2717#0" expanded="true" />
           </folding>
         </state>
       </provider>
