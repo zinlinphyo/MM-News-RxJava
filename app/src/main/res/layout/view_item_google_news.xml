@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="@dimen/margin_medium_2"
     card_view:cardElevation="@dimen/margin_small">
 
@@ -11,24 +11,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/iv_google_news_hero_image"
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_hero_image"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            tools:src="@drawable/img_news_placeholder" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginRight="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            card_view:cardElevation="0dp"
+            card_view:cardCornerRadius="@dimen/margin_medium">
+
+            <ImageView
+                android:id="@+id/iv_google_news_hero_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/img_news_placeholder" />
+
+        </android.support.v7.widget.CardView>
 
         <ImageView
             android:id="@+id/iv_google_news_publication_logo"
             android:layout_width="@dimen/google_news_logo_width"
             android:layout_height="@dimen/google_news_logo_height"
+            android:layout_below="@id/cv_hero_image"
             android:layout_marginLeft="@dimen/margin_medium_2"
             android:layout_marginRight="@dimen/margin_medium_2"
             android:layout_marginTop="@dimen/margin_medium"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_publication_logo_placeholder"
-            android:layout_below="@id/iv_google_news_hero_image"
-            />
+            android:src="@drawable/img_publication_logo_placeholder" />
 
         <org.mmtextview.components.MMTextView
             android:id="@+id/tv_google_news_brief_news"
@@ -39,12 +51,11 @@
             android:layout_marginLeft="@dimen/margin_medium_2"
             android:layout_marginRight="@dimen/margin_medium_2"
             android:layout_marginTop="@dimen/margin_medium"
-            android:text="@string/dummy_news"
-            android:textColor="@color/primary_text"
+            android:ellipsize="end"
             android:lineSpacingMultiplier="1.3"
             android:maxLines="2"
-            android:ellipsize="end"
-            />
+            android:text="@string/dummy_news"
+            android:textColor="@color/primary_text" />
 
         <TextView
             android:id="@+id/tv_google_news_published_date"
@@ -52,14 +63,13 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/tv_publication_name"
             android:layout_below="@id/tv_google_news_brief_news"
+            android:layout_marginBottom="@dimen/margin_medium_2"
             android:layout_marginLeft="@dimen/margin_medium_2"
             android:layout_marginRight="@dimen/margin_medium_2"
             android:layout_marginTop="@dimen/margin_medium"
-            android:layout_marginBottom="@dimen/margin_medium_2"
             android:text="Jan 01 - 6:30AM"
             android:textColor="@color/secondary_text"
-            android:textSize="@dimen/text_small"
-            />
+            android:textSize="@dimen/text_small" />
 
     </RelativeLayout>
 
