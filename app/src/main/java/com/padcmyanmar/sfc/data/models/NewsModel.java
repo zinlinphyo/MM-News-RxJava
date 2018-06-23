@@ -1,6 +1,7 @@
 package com.padcmyanmar.sfc.data.models;
 
 import android.support.annotation.NonNull;
+import android.util.ArrayMap;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -11,7 +12,9 @@ import com.padcmyanmar.sfc.network.MMNewsAPI;
 import com.padcmyanmar.sfc.network.reponses.GetNewsResponse;
 import com.padcmyanmar.sfc.utils.AppConstants;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Single;
@@ -33,9 +36,11 @@ public class NewsModel {
     private static NewsModel objInstance;
     private int mmNewsPageIndex = 1;
     private MMNewsAPI mmNewsAPI;
+    private Map<String, NewsVO> mNewsMap;
 
     private NewsModel() {
         initMMNewsApi();
+        mNewsMap = new HashMap<>();
     }
 
     public static NewsModel getInstance() {
@@ -43,6 +48,10 @@ public class NewsModel {
             objInstance = new NewsModel();
         }
         return objInstance;
+    }
+
+    public NewsVO getNewsById(String newsId){
+        return mNewsMap.get(newsId);
     }
 
     private void initMMNewsApi(){
@@ -83,6 +92,11 @@ public class NewsModel {
                     @Override
                     public void onSuccess(List<NewsVO> newsVOs) {
                         Log.d(SFCNewsApp.LOG_TAG, "onSuccess: " + newsVOs.size());
+
+                        for (NewsVO news : newsVOs){
+                            mNewsMap.put(news.getNewsId(), news);
+                        }
+
                         newsSubject.onNext(newsVOs);
                     }
 
